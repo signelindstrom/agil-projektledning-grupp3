@@ -1,0 +1,19 @@
+
+.button-46 {
+  align-items: center;
+  background-color: rgba(240, 240, 240, 0.26);
+  border: 1px solid #DFDFDF;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  min-width: 200px;
+  font-size: 18px;
+  justify-content: center;
+  padding: 14px 22px;
+  text-decoration: none;
+}
+.inactive {
+  display: none;
+}

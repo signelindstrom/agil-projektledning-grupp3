@@ -17,4 +17,30 @@ function compareFunction(student, corporation){
     console.log('no match')
   }
 }
+
 compareFunction(student1, corporation1)
+
+function toggleForm(formId) {
+  const form = document.getElementById(formId);
+  form.classList.toggle('inactive');
+}
+function hideAllForms() {
+  const forms = document.getElementsByTagName('form');
+  for (let i = 0; i < forms.length; i++) {
+    forms[i].classList.add('inactive');
+  }
+}
+document.getElementById('btn1').addEventListener('click', function() {
+  hideAllForms()
+  toggleForm('form1');
+});
+
+document.getElementById('btn2').addEventListener('click', function() {
+  hideAllForms()
+  toggleForm('form2');
+});
+
+document.getElementById('btn3').addEventListener('click', function() {
+  hideAllForms()
+  toggleForm('form3');
+});
