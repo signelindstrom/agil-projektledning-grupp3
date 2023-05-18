@@ -1,43 +1,8 @@
-const student = {
-  name: "Jan Ekdahl",
-  email: "jan@bingo.com",
-  city: "Malmö",
-  major: "Frontend Developer",
-  answers: [
-    1,
-    2,
-    1,
-    2,
-    2,
-    1,
-    1,
-    1,
-    1,
+import { corporation, student } from "./scripts/classes.js";
 
-  ]
-};
-
-
-const corporation = {
-  name: "Färetag1",
-  email: "företag@bango.com",
-  city: "Malmö",
-  requirements: "Frontend Developer",
-  answers: [
-    1,
-    2,
-    1,
-    1,
-    2,
-    1,
-    1,
-    2,
-    1,
-  ]
-  
-};
-
-function compareFunction(){
+const student1 = new student('James', 'james@bnond.comb', 'Malmö', 'Frontend developer', [1,2,1,2,2,1,1,1,1])
+const corporation1 = new corporation('Företag1', 'företag@bongo.com', 'Malmö', 'Frontend Developer', [1,2,1,1,2,1,1,2,1,])
+function compareFunction(student, corporation){
   let compatability = 0;
   for(let i = 0; i < corporation.answers.length; i++){
     if(corporation.answers[i] == student.answers[i]){
@@ -52,4 +17,4 @@ function compareFunction(){
     console.log('no match')
   }
 }
-compareFunction()
+compareFunction(student1, corporation1)
