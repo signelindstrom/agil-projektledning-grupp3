@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --text-color: aliceblue;
     --background-color: rgb(34,193,195);
     --accent-color: salmon;
@@ -141,4 +141,147 @@ span{
 
 }
 
+} */
+
+body {
+  margin: 0;
+}
+
+/* Navbar*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar_icon img {
+  width: 100px;
+  padding-left: 40px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+}
+
+li {
+  padding: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+/* Landingpage main */
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.landingpage {
+  width: 100vw;
+  height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingpage_title_and_textarea {
+  width: 40vw;
+  text-align: center;
+  color: white;
+  position: absolute;
+}
+
+.landingpage img {
+  width: 100vw;
+  height: 78vh;
+}
+
+/* Matching website*/
+
+.aside_content_matchingsite {
+  background-color: #cc919c;
+  width: 40vw;
+  height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.matching_site_main {
+  max-width: 100vw;
+  max-height: 90vh;
+  display: flex;
+}
+
+.main_informationdiv img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.main_informationdiv {
+  width: 60vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.matching_information_div_container_one {
+  background-color: #cc919c;
+  width: 35vw;
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.matching_information_div_container_two {
+  background-color: #cc919c;
+  width: 35vw;
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.matching_information_div_container_three {
+  background-color: #cc919c;
+  width: 35vw;
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Form website */
+
+.main_form_site {
+  max-width: 100vw;
+  max-height: 90vh;
+  display: flex;
+}
+
+.div_for_form_information {
+  width: 60vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aside_matching_information {
+  background-color: #cc919c;
+  width: 40vw;
+  height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
