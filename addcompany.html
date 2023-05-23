@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Information om företaget</h2>
+  <form id="companyForm">
+    <label for="companyName">Företagets namn:</label>
+    <input type="text" id="companyName" name="companyName" required><br><br>
+
+    <label for="companyLogo">Företagets logotyp (URL till bilden):</label>
+    <input type="text" id="companyLogo" name="companyLogo" required><br><br>
+
+    <label for="companyLocation">Företagets adress:</label>
+    <input type="text" id="companyLocation" name="companyLocation" required><br><br>
+
+    <label for="companyAbout">Företagets presentation:</label><br>
+    <textarea id="companyAbout" name="companyAbout" rows="5" cols="40" required></textarea><br><br>
+
+    <label for="companyLookingFor">Företaget söker studerande inom:</label><br>
+    <input type="checkbox" id="lookingForOption1" name="companyLookingFor" value="frontend">
+    <label for="lookingForOption1">Frontend-utveckling</label><br>
+    <input type="checkbox" id="lookingForOption2" name="companyLookingFor" value="backend">
+    <label for="lookingForOption2">Backend-utveckling</label><br>
+    <input type="checkbox" id="lookingForOption3" name="companyLookingFor" value="b2b">
+    <label for="lookingForOption3">B2B-försäljning</label><br><br>
+
+    <label for="companyImages">Bilder från företaget (URL till bild):</label><br>
+    <input type="text" id="companyImage1" name="companyImages" required><br>
+    <input type="text" id="companyImage2" name="companyImages" required><br>
+    <br>
+
+    <label for="companyWebpage">Företagets hemsida:</label>
+    <input type="text" id="companyWebpage" name="companyWebpage" required><br><br>
+
+    <label for="companyChoices">Matchning:</label><br>
+
+    <label for="choice1">Vi arbetar mest:</label><br>
+    <input type="radio" id="choice1Option1" name="companyChoices.choice1" value="1" required>
+    <label for="choice1Option1">På distans</label>
+    <input type="radio" id="choice1Option2" name="companyChoices.choice1" value="2" required>
+    <label for="choice1Option2">På plats</label><br><br>
+
+
+    <label for="choice2">Studenten kommer arbeta mest:</label><br>
+    <input type="radio" id="choice2Option1" name="companyChoices.choice2" value="1" required>
+    <label for="choice2Option1">Ensam</label>
+    <input type="radio" id="choice2Option2" name="companyChoices.choice2" value="2" required>
+    <label for="choice2Option2">I grupp</label><br><br>
+
+    <label for="choice3">Vår arbetsplats är mer:</label><br>
+    <input type="radio" id="choice3Option1" name="companyChoices.choice3" value="1" required>
+    <label for="choice3Option1">Casual</label>
+    <input type="radio" id="choice3Option2" name="companyChoices.choice3" value="2" required>
+    <label for="choice3Option2">Business</label><br><br>
+
+    <input type="radio" id="choice4Option1" name="companyChoices.choice4" value="1" required>
+    <label for="choice4Option1">Bibliotek</label>
+    <input type="radio" id="choice4Option2" name="companyChoices.choice4" value="2" required>
+    <label for="choice4Option2">Disco</label><br><br>
+
+    <label for="choice3">En personlighet som passar bra in hos oss:</label><br>
+    <input type="radio" id="choice5Option1" name="companyChoices.choice5" value="1" required>
+    <label for="choice5Option1">Extrovert</label>
+    <input type="radio" id="choice5Option2" name="companyChoices.choice5" value="2" required>
+    <label for="choice5Option2">Introvert</label><br><br>
+
+    <input type="radio" id="choice6Option1" name="companyChoices.choice6" value="1" required>
+    <label for="choice6Option1">Festliv</label>
+    <input type="radio" id="choice6Option2" name="companyChoices.choice6" value="2" required>
+    <label for="choice6Option2">Familjeliv</label><br><br>
+
+    <input type="radio" id="choice7Option1" name="companyChoices.choice7" value="1" required>
+    <label for="choice7Option1">Öga för detalj</label>
+    <input type="radio" id="choice7Option2" name="companyChoices.choice7" value="2" required>
+    <label for="choice7Option2">Se helheten</label><br><br>
+
+    <input type="radio" id="choice8Option1" name="companyChoices.choice8" value="1" required>
+    <label for="choice8Option1">Initiativtagande</label>
+    <input type="radio" id="choice8Option2" name="companyChoices.choice8" value="2" required>
+    <label for="choice8Option2">Genomtänkt</label><br><br>
+
+    <input type="radio" id="choice9Option1" name="companyChoices.choice9" value="1" required>
+    <label for="choice9Option1">Festliv</label>
+    <input type="radio" id="choice9Option2" name="companyChoices.choice9" value="2" required>
+    <label for="choice9Option2">Familjeliv</label><br><br>
+
+
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
