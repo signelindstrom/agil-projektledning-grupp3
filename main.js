@@ -4,12 +4,15 @@ const student1 = new student('James', 'james@bnond.comb', 'Malmö', 'Frontend de
 const corporation1 = new corporation('Företag1', 'företag@bongo.com', 'Malmö', 'Frontend Developer', [1,2,1,1,2,1,1,2,1,])
 function compareFunction(student, corporation){
   let compatability = 0;
-  for(let i = 0; i < corporation.answers.length; i++){
-    if(corporation.answers[i] == student.answers[i]){
-      console.log("yess")
-      compatability++
-      console.log(compatability)
+  if(student1.city === corporation1.city){
+    for(let i = 0; i < corporation.answers.length; i++){
+      if(corporation.answers[i] == student.answers[i] && student1.major === corporation1.requirements){
+        console.log("yess")
+        compatability++
+        console.log(compatability)
+      }
     }
+    
   }
   if(compatability >= 7){
     console.log('its a match')
