@@ -23,6 +23,7 @@ document.getElementById('companyForm').addEventListener('submit', async function
       choice7: document.querySelector('input[name="companyChoices.choice7"]:checked').value,
       choice8: document.querySelector('input[name="companyChoices.choice8"]:checked').value,
       choice9: document.querySelector('input[name="companyChoices.choice9"]:checked').value,
+      choice10: document.querySelector('input[name="companyChoices.choice10"]:checked').value,
     };
   
     // objekt av all info som skrivits in i formet
