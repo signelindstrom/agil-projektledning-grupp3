@@ -1,7 +1,7 @@
 const loginForm = document.querySelector('#login-form');
 const signupForm = document.querySelector('#signup-form');
 loginForm.style.display = 'none'
-// signupForm.style.display = 'none'
+signupForm.style.display = 'none'
 
 const loginBtn = document.querySelector('#login-btn');
 const signupBtn = document.querySelector('#signup-btn');
