@@ -1,7 +1,7 @@
 const loginForm = document.querySelector('#login-form');
 const signupForm = document.querySelector('#signup-form');
 loginForm.style.display = 'none'
-signupForm.style.display = 'none'
+// signupForm.style.display = 'none'
 
 const loginBtn = document.querySelector('#login-btn');
 const signupBtn = document.querySelector('#signup-btn');
@@ -15,6 +15,57 @@ signupBtn.addEventListener('click', () => {
     loginForm.style.display = 'none'
     signupForm.style.display = 'block'
 })
+
+// get schools from database 
+const selectSchool = document.querySelector('#school-select');
+const selectProg = document.querySelector('#prog-select');
+
+async function getSchools(){
+    const url = 'https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/schools.json'
+
+    const response = await fetch(url);
+    const data = await response.json();
+    const schoolArray = Object.keys(data);
+    console.log(schoolArray)
+
+    schoolArray.forEach(alt => {
+        const opt = document.createElement('option');
+        selectSchool.append(opt);
+        opt.innerText = alt;
+    })
+}
+getSchools();
+
+let schoolChoice;
+selectSchool.addEventListener('change', ()=>{
+    schoolChoice = selectSchool.value;
+    console.log(schoolChoice);
+
+    const schoolString = schoolChoice.toString();
+    if(schoolString.includes(' ')){
+        const schoolFormatted = schoolString.replace(' ', '%20');
+        getProgram(schoolFormatted);
+    } else getProgram(schoolString);
+   
+})
+
+// get schools programs from database
+async function getProgram(school){
+    selectProg.disabled = false;
+    selectProg.innerHTML = '';
+    console.log(school);
+    const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/schools/${school}.json`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+    const programArray = Object.values(data);
+
+    programArray.forEach(alt => {
+        const opt = document.createElement('option');
+        selectProg.append(opt);
+        opt.innerText = alt;
+    })
+}
 
 
 async function getFirebaseData() {
@@ -97,7 +148,9 @@ signupUserBtn.addEventListener('click', async (event) => {
             first_name: firstName,
             last_name: lastName,
             about_me: aboutMe,
-            links: linkArray
+            links: linkArray,
+            school: selectSchool.value,
+            program: selectProg.value
         }
 
         console.log(addNewStudent)

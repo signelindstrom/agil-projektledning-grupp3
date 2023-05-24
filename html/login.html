@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="../login.js" defer></script>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div>
@@ -29,6 +28,20 @@
             <input type="text" id="first-name" required>
             <label for="last-name">Efternamn</label>
             <input type="text" id="last-name" required>
+
+            <select name="" id="school-select">
+                <option selected hidden>Min skola</option>
+                <!-- <option value="gritAcademy">Grit Academy</option>
+                <option value="secondSchool">Skola 2</option>
+                <option value="thirdSchool">Skola 3</option> -->
+            </select>
+            <select name="" id="prog-select" disabled required>
+                <!-- <option selected hidden>Min utbildning</option>
+                <option value="" id="opt1"></option>
+                <option value="" id="opt2"></option>
+                <option value="" id="opt3"></option> -->
+            </select>
+
             <label for="signup-mail">E-post</label>
             <input type="text" id="signup-mail" required>
             <label for="signup-password">Lösenord</label>
