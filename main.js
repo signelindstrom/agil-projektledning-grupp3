@@ -2,18 +2,18 @@ document.getElementById('companyForm').addEventListener('submit', async function
     event.preventDefault(); 
   
     // hämtar data från formulär
-    var companyName = document.querySelector('input[name="companyName"]').value;
-    var companyLogo = document.querySelector('input[name="companyLogo"]').value;
-    var companyLocation = document.querySelector('input[name="companyLocation"]').value;
-    var companyAbout = document.querySelector('textarea[name="companyAbout"]').value;
-    var companyLookingFor = Array.from(document.querySelectorAll('input[name="companyLookingFor"]:checked')).map(function(checkbox) {
+    let companyName = document.querySelector('input[name="companyName"]').value;
+    let companyLogo = document.querySelector('input[name="companyLogo"]').value;
+    let companyLocation = document.querySelector('input[name="companyLocation"]').value;
+    let companyAbout = document.querySelector('textarea[name="companyAbout"]').value;
+    let companyLookingFor = Array.from(document.querySelectorAll('input[name="companyLookingFor"]:checked')).map(function(checkbox) {
       return checkbox.value;
     });
-    var companyImages = Array.from(document.querySelectorAll('input[name="companyImages"]')).map(function(input) {
+    let companyImages = Array.from(document.querySelectorAll('input[name="companyImages"]')).map(function(input) {
       return input.value;
     });
-    var companyWebpage = document.querySelector('input[name="companyWebpage"]').value;
-    var companyChoices = {
+    let companyWebpage = document.querySelector('input[name="companyWebpage"]').value;
+    let companyChoices = {
       choice1: document.querySelector('input[name="companyChoices.choice1"]:checked').value,
       choice2: document.querySelector('input[name="companyChoices.choice2"]:checked').value,
       choice3: document.querySelector('input[name="companyChoices.choice3"]:checked').value,
@@ -26,7 +26,7 @@ document.getElementById('companyForm').addEventListener('submit', async function
     };
   
     // objekt av all info som skrivits in i formet
-    var companyData = {
+    let companyData = {
       companyName: companyName,
       companyLogo: companyLogo,
       companyLocation: companyLocation,
