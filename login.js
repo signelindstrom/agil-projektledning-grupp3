@@ -100,7 +100,7 @@ loginUserBtn.addEventListener('click', async (event) => {
             console.log('yes')
             localStorage.setItem('loggedInStudent', first_name);
             setTimeout(() => {
-                alert('nu ska du komma till din profil-sida');
+                location.assign('profile.html')
             }, 400);
             break;
         }
@@ -172,7 +172,7 @@ signupUserBtn.addEventListener('click', async (event) => {
         }
 
         setTimeout(() => {
-            alert('nu bör en ny användare vara skapad')
+            location.assign('profile.html')
         }, 400);
 
     }
