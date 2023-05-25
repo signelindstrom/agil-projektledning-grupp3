@@ -20,7 +20,7 @@ signupBtn.addEventListener('click', () => {
 const selectSchool = document.querySelector('#school-select');
 const selectProg = document.querySelector('#prog-select');
 
-async function getSchools(){
+async function getSchools() {
     const url = 'https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/schools.json'
 
     const response = await fetch(url);
@@ -37,20 +37,20 @@ async function getSchools(){
 getSchools();
 
 let schoolChoice;
-selectSchool.addEventListener('change', ()=>{
+selectSchool.addEventListener('change', () => {
     schoolChoice = selectSchool.value;
     console.log(schoolChoice);
 
     const schoolString = schoolChoice.toString();
-    if(schoolString.includes(' ')){
+    if (schoolString.includes(' ')) {
         const schoolFormatted = schoolString.replace(' ', '%20');
         getProgram(schoolFormatted);
     } else getProgram(schoolString);
-   
+
 })
 
 // get schools programs from database
-async function getProgram(school){
+async function getProgram(school) {
     selectProg.disabled = false;
     selectProg.innerHTML = '';
     console.log(school);
@@ -81,6 +81,7 @@ async function getFirebaseData() {
 // login/signup
 const signupUserBtn = document.querySelector('#signup-user-btn');
 const loginUserBtn = document.querySelector('#login-user-btn');
+localStorage.setItem('loggedIn', 'false');
 
 // login
 loginUserBtn.addEventListener('click', async (event) => {
@@ -95,10 +96,18 @@ loginUserBtn.addEventListener('click', async (event) => {
     console.log(userArray)
 
     for (let i = 0; i < userArray.length; i++) {
-        const { mail, password, first_name } = userArray[i];
+        const { mail, password, first_name, about_me, links, program, school } = userArray[i];
         if (loginMail == mail && loginPassword == password) {
-            console.log('yes')
+            // localStorage user info
             localStorage.setItem('loggedInStudent', first_name);
+            localStorage.setItem('studentMail', mail);
+            localStorage.setItem('studentSchool', school);
+            localStorage.setItem('studentProgram', program);
+            localStorage.setItem('studentAbout', about_me);
+            localStorage.setItem('studentLink1', links[0]);
+            localStorage.setItem('studentLink2', links[1]);
+            localStorage.setItem('studentLink3', links[2]);
+            localStorage.setItem('loggedIn', 'true');
             setTimeout(() => {
                 location.assign('profile.html')
             }, 400);
@@ -131,7 +140,7 @@ signupUserBtn.addEventListener('click', async (event) => {
         }
     }
 
-    const signupPassword = document.querySelector('#signup-password').value;    
+    const signupPassword = document.querySelector('#signup-password').value;
     const firstName = document.querySelector('#first-name').value;
     const lastName = document.querySelector('#last-name').value;
     const aboutMe = document.querySelector('#about-me').value;
@@ -170,6 +179,17 @@ signupUserBtn.addEventListener('click', async (event) => {
             const response = await fetch(url, init);
             const data = await response.json();
         }
+
+        // localStorage user info
+        localStorage.setItem('loggedInStudent', firstName);
+        localStorage.setItem('studentMail', signupMail);
+        localStorage.setItem('studentSchool', selectSchool.value);
+        localStorage.setItem('studentProgram', selectProg.value);
+        localStorage.setItem('studentAbout', aboutMe);
+        localStorage.setItem('studentLink1', firstLink);
+        localStorage.setItem('studentLink2', secondLink);
+        localStorage.setItem('studentLink3', thirdLink);
+        localStorage.setItem('loggedIn', 'true');
 
         setTimeout(() => {
             location.assign('profile.html')
