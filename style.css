@@ -141,3 +141,15 @@ main {
   justify-content: center;
   text-align: center;
 }
+
+
+/* ADMIN */
+
+#allCompaniesContainer div {
+  display: flex;
+  flex-direction: row;
+}
+
+#allCompaniesContainer div * {
+  margin: .6em;
+}
