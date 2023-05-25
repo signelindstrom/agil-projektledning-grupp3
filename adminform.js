@@ -1,3 +1,5 @@
+import {getCompanyData} from './adminmain.js'
+
 document.getElementById('companyForm').addEventListener('submit', async function(event) {
     event.preventDefault(); 
   
@@ -48,14 +50,6 @@ document.getElementById('companyForm').addEventListener('submit', async function
         document.getElementById('companyForm').reset()
     )
   });
-
-  async function getCompanyData(){
-    const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/admin/companies.json`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  }
 
    async function postCompanyData(obj,index){
     const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/admin/companies/${index}.json`;
