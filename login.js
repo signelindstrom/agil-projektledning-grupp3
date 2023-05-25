@@ -90,35 +90,53 @@ loginUserBtn.addEventListener('click', async (event) => {
     event.preventDefault();
     loginForm.append(errorMessage);
 
+    // check for admin-login
+    const url = 'https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/admin.json'
+    const response = await fetch(url);
+    const adminData = await response.json();
+    const { mail, password } = adminData;
+    const adminMail = mail;
+    const adminPassword = password;
+    console.log(adminMail, adminPassword)
+
+
     const data = await getFirebaseData();
     const userArray = Object.values(data);
 
     const loginMail = document.querySelector('#login-mail').value;
     const loginPassword = document.querySelector('#login-password').value;
 
-    console.log(userArray)
-
-    for (let i = 0; i < userArray.length; i++) {
-        const { mail, password, first_name, about_me, links, program, school } = userArray[i];
-        if (loginMail == mail && loginPassword == password) {
-            errorMessage.innerText = ''
-            // localStorage user info
-            localStorage.setItem('loggedInStudent', first_name);
-            localStorage.setItem('studentMail', mail);
-            localStorage.setItem('studentSchool', school);
-            localStorage.setItem('studentProgram', program);
-            localStorage.setItem('studentAbout', about_me);
-            localStorage.setItem('studentLink1', links[0]);
-            localStorage.setItem('studentLink2', links[1]);
-            localStorage.setItem('studentLink3', links[2]);
-            localStorage.setItem('loggedIn', 'true');
-            setTimeout(() => {
-                location.assign('profile.html')
-            }, 400);
-            break;
-        }
-        else errorMessage.innerText = 'Fel löserord eller email'
+    if (loginMail == adminMail && loginPassword == adminPassword) {
+        localStorage.setItem('adminAuth', true);
+        setTimeout(() => {
+            location.assign('admin.html')
+        }, 400);
     }
+    else {
+        for (let i = 0; i < userArray.length; i++) {
+            const { mail, password, first_name, about_me, links, program, school } = userArray[i];
+            if (loginMail == mail && loginPassword == password) {
+                errorMessage.innerText = ''
+                // localStorage user info
+                localStorage.setItem('loggedInStudent', first_name);
+                localStorage.setItem('studentMail', mail);
+                localStorage.setItem('studentSchool', school);
+                localStorage.setItem('studentProgram', program);
+                localStorage.setItem('studentAbout', about_me);
+                localStorage.setItem('studentLink1', links[0]);
+                localStorage.setItem('studentLink2', links[1]);
+                localStorage.setItem('studentLink3', links[2]);
+                localStorage.setItem('loggedIn', 'true');
+                setTimeout(() => {
+                    location.assign('profile.html')
+                }, 400);
+                break;
+            }
+            else errorMessage.innerText = 'Fel löserord eller email'
+        }
+    }
+
+
 })
 
 
