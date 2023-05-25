@@ -83,9 +83,12 @@ const signupUserBtn = document.querySelector('#signup-user-btn');
 const loginUserBtn = document.querySelector('#login-user-btn');
 localStorage.setItem('loggedIn', 'false');
 
+const errorMessage = document.createElement('p');
+
 // login
 loginUserBtn.addEventListener('click', async (event) => {
     event.preventDefault();
+    loginForm.append(errorMessage);
 
     const data = await getFirebaseData();
     const userArray = Object.values(data);
@@ -98,6 +101,7 @@ loginUserBtn.addEventListener('click', async (event) => {
     for (let i = 0; i < userArray.length; i++) {
         const { mail, password, first_name, about_me, links, program, school } = userArray[i];
         if (loginMail == mail && loginPassword == password) {
+            errorMessage.innerText = ''
             // localStorage user info
             localStorage.setItem('loggedInStudent', first_name);
             localStorage.setItem('studentMail', mail);
@@ -113,15 +117,16 @@ loginUserBtn.addEventListener('click', async (event) => {
             }, 400);
             break;
         }
-        else console.log('fel epost/lösenord')
+        else errorMessage.innerText = 'Fel löserord eller email'
     }
 })
 
 
 // signup
-let createNewStudent;
+let createNewStudent = false;
 signupUserBtn.addEventListener('click', async (event) => {
     event.preventDefault();
+    signupForm.append(errorMessage);
 
     const data = await getFirebaseData();
     const userArray = Object.values(data);
@@ -131,11 +136,12 @@ signupUserBtn.addEventListener('click', async (event) => {
     for (let i = 0; i < userArray.length; i++) {
         const { mail } = userArray[i];
         if (signupMail == mail) {
-            console.log('email in use')
-            createNewUser = false;
+            errorMessage.innerText = 'Ett konto med den email-adressen finns redan'
+            createNewStudent = false;
             break;
         }
         else if (signupMail != mail) {
+            errorMessage.innerText = ''
             createNewStudent = true;
         }
     }
@@ -149,8 +155,8 @@ signupUserBtn.addEventListener('click', async (event) => {
     const thirdLink = document.querySelector('#link3').value;
     const linkArray = [firstLink, secondLink, thirdLink];
 
-    // adds new user to database
-    if (createNewStudent == true) {
+    // adds new student to database
+    if (createNewStudent === true) {
         const addNewStudent = {
             mail: signupMail,
             password: signupPassword,
