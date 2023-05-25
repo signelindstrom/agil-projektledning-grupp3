@@ -5,6 +5,7 @@ document.getElementById('companyForm').addEventListener('submit', async function
     let companyName = document.querySelector('input[name="companyName"]').value;
     let companyLogo = document.querySelector('input[name="companyLogo"]').value;
     let companyLocation = document.querySelector('input[name="companyLocation"]').value;
+    let companyCity = document.querySelector('input[name="companyCity"]').value;
     let companyAbout = document.querySelector('textarea[name="companyAbout"]').value;
     let companyLookingFor = Array.from(document.querySelectorAll('input[name="companyLookingFor"]:checked')).map(function(checkbox) {
       return checkbox.value;
@@ -31,6 +32,7 @@ document.getElementById('companyForm').addEventListener('submit', async function
       companyName: companyName,
       companyLogo: companyLogo,
       companyLocation: companyLocation,
+      companyCity: companyCity,
       companyAbout: companyAbout,
       companyLookingFor: companyLookingFor,
       companyImages: companyImages,
@@ -38,15 +40,13 @@ document.getElementById('companyForm').addEventListener('submit', async function
       companyChoices: companyChoices
     };
   
+    // lägger in det på rätt index i databasen
     const companiesInDatabase = await getCompanyData();
     const amountOfCompanies = companiesInDatabase.length;
     postCompanyData(companyData,amountOfCompanies)
     .then(
         document.getElementById('companyForm').reset()
     )
-
-    //console.log(companyData)
-  
   });
 
   async function getCompanyData(){
