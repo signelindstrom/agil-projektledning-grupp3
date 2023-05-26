@@ -1,7 +1,7 @@
 let adminAuth = localStorage.getItem('adminAuth');
 
 if (!adminAuth) {
-    location.assign('login.html');
+    location.assign('../index.html');
 }
 
 export async function getCompanyData(){
@@ -49,3 +49,11 @@ async function deleteCompany(index){
       };
       await fetch(url, init);
 }
+
+document.querySelector("#adminLogout").addEventListener("click", ()=> {
+    localStorage.clear();
+    localStorage.setItem('loggedIn', false);
+    setTimeout(() => {
+        location.assign('../index.html')
+    }, 200);
+})

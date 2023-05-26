@@ -69,3 +69,12 @@ document.getElementById('companyForm').addEventListener('submit', async function
     };
     await fetch(url, init);
   }
+
+
+document.querySelector("#adminLogout").addEventListener("click", ()=> {
+  localStorage.clear();
+  localStorage.setItem('loggedIn', false);
+  setTimeout(() => {
+      location.assign('../index.html')
+  }, 200);
+})
