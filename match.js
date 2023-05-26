@@ -39,6 +39,9 @@ async function compare(){
     if(isReq){
       compareAnswers(student.matchingValues.Answers, companies[i].companyChoices)
     }
+    if(isReq){
+      displayCompany(companies[i])
+    }
   }
 }
 
@@ -81,5 +84,25 @@ function compareReq(studentreq, companyreqarr){
     }
   }
   return false
+}
+
+function displayCompany(company){
+  console.log(company.companyImages[0])
+  const contentHolder = document.getElementById('contentHolder')
+  let contentDiv = document.createElement('div')
+  let imageHolder = document.createElement('img')
+  let nameHolder = document.createElement('h4')
+  let locationHolder = document.createElement('p')
+  let button = document.createElement('button')
+  nameHolder.innerText = `${company.companyName}`
+  locationHolder.innerText = `${company.companyCity}`
+  imageHolder.src = `${company.companyImages[0]}`
+  button.innerText = "Läs mer"
+  contentDiv.appendChild(imageHolder)
+  contentDiv.appendChild(nameHolder)
+  contentDiv.appendChild(locationHolder)
+  contentDiv.appendChild(button)
+  contentDiv.classList.add('matchboxtwenty')
+  contentHolder.appendChild(contentDiv)
 }
 compare()
