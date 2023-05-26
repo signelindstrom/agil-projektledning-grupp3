@@ -1,3 +1,9 @@
+let adminAuth = localStorage.getItem('adminAuth');
+
+if (!adminAuth) {
+    location.assign('login.html');
+}
+
 export async function getCompanyData(){
     const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/admin/companies.json`;
 
