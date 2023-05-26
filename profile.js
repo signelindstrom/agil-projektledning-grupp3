@@ -106,9 +106,19 @@ if (localStorage.getItem('loggedIn') == 'true') {
             editInfoBtn.innerText = 'Spara'
         }
     })
+
+    // logout user
+    const logoutBtn = document.querySelector('#logout-btn');
+    logoutBtn.addEventListener('click', () =>{
+        localStorage.clear();
+        localStorage.setItem('loggedIn', false);
+        setTimeout(() => {
+            location.assign('../index.html')
+        }, 200);
+    })
 }
 
-// if user is not logged, user is redirected to login/signup-page
+// if user is not logged in, user is redirected to login/signup-page
 else location.assign('login.html')
 
 
