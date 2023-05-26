@@ -1,26 +1,17 @@
-const studentInfo = {city: ["Göteborg"],
-major: "frontend",
-answers: [1, 2 , 2, 1, 2, 1, 1, 2, 1, 1]}
-
-console.log(studentInfo)
 
 async function getCompany(){
   const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/admin/companies.json`;
 
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data)
     return data; 
 }
-console.log(localStorage)
+
 async function getStudent(){
   const studentID = localStorage.getItem("studentId")
-  // console.log(studentID)
   const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/students/${studentID}.json`
-
   const response = await fetch(url);
   const data = await response.json();
-  // console.log(data)
   return data; 
 }
 
