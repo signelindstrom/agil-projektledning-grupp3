@@ -1,5 +1,11 @@
 import {getCompanyData} from './adminmain.js'
 
+let adminAuth = localStorage.getItem('adminAuth');
+
+if (!adminAuth) {
+    location.assign('login.html');
+}
+
 document.getElementById('companyForm').addEventListener('submit', async function(event) {
     event.preventDefault(); 
   
