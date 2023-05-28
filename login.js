@@ -120,13 +120,14 @@ loginUserBtn.addEventListener('click', async (event) => {
                 // localStorage user info
                 localStorage.setItem('loggedInStudent', first_name);
                 localStorage.setItem('studentMail', mail);
+                localStorage.setItem('studentPassword', password);
                 localStorage.setItem('studentSchool', school);
                 localStorage.setItem('studentProgram', program);
                 localStorage.setItem('studentAbout', about_me);
                 localStorage.setItem('studentLink1', links[0]);
                 localStorage.setItem('studentLink2', links[1]);
                 localStorage.setItem('studentLink3', links[2]);
-                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('loggedIn', true);
                 setTimeout(() => {
                     location.assign('profile.html')
                 }, 400);
@@ -213,7 +214,7 @@ signupUserBtn.addEventListener('click', async (event) => {
         localStorage.setItem('studentLink1', firstLink);
         localStorage.setItem('studentLink2', secondLink);
         localStorage.setItem('studentLink3', thirdLink);
-        localStorage.setItem('loggedIn', 'true');
+        localStorage.setItem('loggedIn', true);
 
         setTimeout(() => {
             location.assign('profile.html')

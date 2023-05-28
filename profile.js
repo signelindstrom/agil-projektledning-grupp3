@@ -1,6 +1,8 @@
 const studentGreeting = document.querySelector('#student-greeting');
 const studentSchool = document.querySelector('#student-school');
 const studentInfo = document.querySelector('#student-info');
+const studentMail = document.querySelector('#student-mail');
+const studentPassword = document.querySelector('#student-password');
 const studentAbout = document.querySelector('#student-about');
 const studentLink1 = document.querySelector('#student-link1');
 const studentLink2 = document.querySelector('#student-link2');
@@ -39,6 +41,8 @@ if (localStorage.getItem('loggedIn') == 'true') {
     studentGreeting.innerText = `Hej, ${localStorage.getItem('loggedInStudent')}`;
     studentSchool.innerText = `${localStorage.getItem('studentSchool')}, ${localStorage.getItem('studentProgram')}`;
 
+    studentMail.value = localStorage.getItem('studentMail');
+    studentPassword.value = localStorage.getItem('studentPassword');
     studentAbout.innerText = localStorage.getItem('studentAbout');
     studentLink1.value = localStorage.getItem('studentLink1');
     studentLink2.value = localStorage.getItem('studentLink2');
@@ -52,12 +56,17 @@ if (localStorage.getItem('loggedIn') == 'true') {
         if (edit % 2 == 0) {
 
             // updates localStorage with updated info
+            localStorage.setItem('studentMail', studentMail.value);
+            localStorage.setItem('studentPassword', studentPassword.value);
             localStorage.setItem('studentAbout', studentAbout.value);
             localStorage.setItem('studentLink1', studentLink1.value);
             localStorage.setItem('studentLink2', studentLink2.value);
             localStorage.setItem('studentLink3', studentLink3.value);
             const linksArray = [localStorage.getItem('studentLink1'), localStorage.getItem('studentLink2'), localStorage.getItem('studentLink3')]
 
+            studentMail.disabled = true;
+            studentPassword.disabled = true;
+            studentPassword.type = 'password'
             studentAbout.disabled = true;
             studentLink1.disabled = true;
             studentLink2.disabled = true;
@@ -65,6 +74,8 @@ if (localStorage.getItem('loggedIn') == 'true') {
             editInfoBtn.innerText = 'Redigera'
 
             const updatedInfo = {
+                mail: localStorage.getItem('studentMail'),
+                password: localStorage.getItem('studentPassword'),
                 about_me: localStorage.getItem('studentAbout'),
                 links: linksArray
             }
@@ -99,6 +110,9 @@ if (localStorage.getItem('loggedIn') == 'true') {
 
 
         } else {
+            studentMail.disabled = false;
+            studentPassword.disabled = false;
+            studentPassword.type = 'text'
             studentAbout.disabled = false;
             studentLink1.disabled = false;
             studentLink2.disabled = false;
