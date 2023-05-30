@@ -84,16 +84,59 @@ function displayCompany(company){
   let imageHolder = document.createElement('img')
   let nameHolder = document.createElement('h4')
   let locationHolder = document.createElement('p')
-  let button = document.createElement('button')
+  let readMoreButton = document.createElement('button')
   nameHolder.innerText = `${company.companyName}`
   locationHolder.innerText = `${company.companyCity}`
   imageHolder.src = `${company.companyImages[0]}`
-  button.innerText = "Läs mer"
-  contentDiv.appendChild(imageHolder)
-  contentDiv.appendChild(nameHolder)
-  contentDiv.appendChild(locationHolder)
-  contentDiv.appendChild(button)
+  readMoreButton.innerText = "Läs mer"
+  const readMoreButtonId = "readMoreButton" + company.companyName;
+  readMoreButton.id = readMoreButtonId;
+  contentDiv.append(imageHolder,nameHolder,locationHolder,readMoreButton);
   contentDiv.classList.add('matchboxtwenty')
   contentHolder.appendChild(contentDiv)
+
+  // klicka på "läs mer"
+  document.querySelector("#readMoreButton"+company.companyName).addEventListener("click", async ()=> {
+    let companyName = company.companyName;
+    console.log(companyName)
+    const companies = await getCompany();
+
+    const matchingCompany = companies.find((company) => company.companyName === companyName);
+    if (matchingCompany) {
+      // modal html
+      let modal = document.createElement("div");
+      modal.id="myModal"; //kanske ta bort?
+      modal.classList.add("modal")
+      document.body.append(modal);
+
+      let modalContent = document.createElement("div");
+      modalContent.classList.add("modal-content");
+      modal.append(modalContent);
+
+      let span = document.createElement("span");
+      span.classList.add("close");
+      span.innerText = "x";
+
+      let h2Name = document.createElement("h2");
+      h2Name.innerText = matchingCompany.companyName;
+      modalContent.append(span,h2Name);
+
+      modal.style.display="block";
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      } 
+
+      console.log(matchingCompany);
+    }
+  })
+
+
 }
 compare()
