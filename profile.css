@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Navbar*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: black solid 1px; 
+}
+
+.navbar_icon img {
+    width: 100px;
+    padding-left: 40px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+}
+
+li {
+    padding: 20px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+/* User-profile */
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right,
+            white 0%,
+            white 60%,
+            #d9516b 60%,
+            #d9516b 100%);
+    font-family: 'Inter';
+}
+
+#student-profile{
+    width: 40%;
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 160px;
+    margin-top: 70px;
+}
+
+#student-greeting{
+    color: #d9516b;
+    padding: 10px;
+}
+
+#student-info{
+    margin: 20px;
+    height: fit-content;
+}
+
+#label-mail, #label-password, #label-links{
+    color: #d9516b;
+    border-bottom: black 1px solid;
+}
+
+#student-mail, #student-password, #student-link1, #student-link2, #student-link3{
+    display: block;
+    color: black;
+    font-family: 'Inter';
+    padding: 5px;
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    width:96.7%;
+    text-align: center;
+    padding: 10px;
+}
+
+#student-link1, #student-link2, #student-link3{
+    background-color: #d9516b;
+    opacity: 80%;
+    margin: 10px;
+    color: white;
+    border-radius: 25px;
+}
+
+#student-about{
+    position: absolute;
+    right: 150px;
+    top: 300px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    resize: none;
+    font-family: 'Inter';
+    font-size: medium;
+    letter-spacing: 1.5px;
+}
+
+#label-about{
+    position: absolute;
+    right: 543px;
+    top: 240px;
+    font-size: xx-large;
+    color: white;
+}
+
+#edit-info{
+    padding: 10px;
+    border-radius: 20px;
+    border: black 1px solid;
+    color: #d9516b;
+    background-color: transparent;
+    font-family: 'Inter';
+    position: relative;
+    top: 122px;
+    left: 60px;
+}
+
+#match-btn{
+    position: absolute;
+    top: 700px;
+    right: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    border: black 1px solid;
+    background-color: transparent;
+    font-family: 'Inter';
+}
+
+#match-btn>a{
+    text-decoration: none;
+    color: white;
+}
+
+#logout-btn{
+    position: absolute;
+    top: 700px;
+    right: 1375px;
+    padding: 10px;
+    border-radius: 20px;
+    border: black 1px solid;
+    color: #d9516b;
+    background-color: transparent;
+    font-family: 'Inter';
+}

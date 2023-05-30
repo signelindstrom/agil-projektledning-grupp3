@@ -71,7 +71,7 @@ if (localStorage.getItem('loggedIn') == 'true') {
             studentLink1.disabled = true;
             studentLink2.disabled = true;
             studentLink3.disabled = true;
-            editInfoBtn.innerText = 'Redigera'
+            editInfoBtn.innerText = 'REDIGERA'
 
             const updatedInfo = {
                 mail: localStorage.getItem('studentMail'),
@@ -117,7 +117,7 @@ if (localStorage.getItem('loggedIn') == 'true') {
             studentLink1.disabled = false;
             studentLink2.disabled = false;
             studentLink3.disabled = false;
-            editInfoBtn.innerText = 'Spara'
+            editInfoBtn.innerText = 'SPARA'
         }
     })
 
