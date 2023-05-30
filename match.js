@@ -119,7 +119,37 @@ function displayCompany(company){
 
       let h2Name = document.createElement("h2");
       h2Name.innerText = matchingCompany.companyName;
-      modalContent.append(span,h2Name);
+      let logo = document.createElement("img");
+      logo.classList.add("company-logo-modal")
+      logo.src = matchingCompany.companyLogo;
+      let logoNameContainer = document.createElement("div");
+      // slideshow och karta här
+      let h3About = document.createElement("h3");
+      h3About.innerText = "Om oss"
+      h3About.id = "h3-about"
+      let pAbout = document.createElement("p");
+      pAbout.id = "p-about"
+      pAbout.innerText = matchingCompany.companyAbout;
+      let h3LookingFor = document.createElement("h3");
+      h3LookingFor.innerText = "Vi söker"
+      let innerContainer = document.createElement("div");
+      lookingForContainer = document.createElement("div");
+      let pLookingFor = document.createElement("p");
+      pLookingFor.innerText = matchingCompany.companyLookingFor;
+      let websiteLink = document.createElement("a");
+      websiteLink.innerText = "Besök vår webbplats ->"
+      websiteLink.href = matchingCompany.companyWebpage;
+      lookingForContainer.append(h3LookingFor, pLookingFor);
+      innerContainer.append(lookingForContainer, websiteLink);
+      innerContainer.id = "inner-container"
+      logoNameContainer.append(logo, h2Name);
+      logoNameContainer.id = "logo-name-container"
+      // antal matchningar här? 
+      let sendMessageBtn = document.createElement("button");
+      sendMessageBtn.innerText = "Skicka meddelande";
+
+
+      modalContent.append(span,logoNameContainer, h3About,pAbout, innerContainer,sendMessageBtn);
 
       modal.style.display="block";
 
