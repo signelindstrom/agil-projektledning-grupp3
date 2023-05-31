@@ -19,6 +19,7 @@ async function compare() {
   const student = await getStudent();
   console.log(student);
   for (let i = 0; i < companies.length; i++) {
+    console.log(student.matchingValues.lookingFor)
     let isReq = compareReq(
       student.matchingValues.lookingFor,
       companies[i].companyLookingFor
@@ -34,7 +35,7 @@ async function compare() {
     console.log(isReq);
     if (isReq) {
       compareAnswers(
-        student.matchingValues.Answers,
+        student.matchingValues.answers,
         companies[i].companyChoices
       );
     }
@@ -49,7 +50,7 @@ function compareAnswers(studentAnswers, companyAnswers) {
   let compatability = 0;
   for (let i = 0; i < studentAnswers.length; i++) {
     if (studentAnswers[i] == companyAnswers[`choice${i}`]) {
-      // console.log(studentAnswers[i], companyAnswers[`choice${i}`]);
+      console.log(studentAnswers[i], companyAnswers[`choice${i}`]);
       compatability++;
     }
   }
@@ -86,7 +87,7 @@ function compareReq(studentreq, companyreqarr) {
 }
 
 function displayCompany(company) {
-  console.log(company.companyImages[0]);
+  console.log(company.companyName);
 
   const contentHolder = document.getElementById("contentHolder");
   let contentDiv = document.createElement("div");
