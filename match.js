@@ -97,7 +97,7 @@ function displayCompany(company) {
 
   nameHolder.innerText = `${company.companyName}`;
   locationHolder.innerText = `${company.companyCity}`;
-  imageHolder.src = `${company.companyImages[0]}`;
+  imageHolder.src = `${company.companyLogo}`;
   readMoreButton.innerText = "Läs mer";
   
   const readMoreButtonId = "readMoreButton" + company.companyName;
@@ -111,13 +111,15 @@ function displayCompany(company) {
     .querySelector("#readMoreButton" + company.companyName)
     .addEventListener("click", async () => {
       let companyName = company.companyName;
-      console.log(companyName);
       const companies = await getCompany();
 
       function removeModal() {
         const modal = document.getElementById("myModal");
+        const modal2 = document.getElementById("myModal2");
         if (modal) {
           modal.remove();
+        } else if (modal2) {
+          modal2.remove();
         }
       }
 
@@ -128,7 +130,7 @@ function displayCompany(company) {
         removeModal()
         // MODAL CONTENT
         let modal = document.createElement("div");
-        modal.id = "myModal"; //kanske ta bort?
+        modal.id = "myModal"; 
         modal.classList.add("modal");
         document.body.append(modal);
 
@@ -228,18 +230,9 @@ function displayCompany(company) {
         setTimeout(() => {
           showSlides(slideIndex);
         }, 50);
-        // showSlides(slideIndex);
         // SLIDESHOW SLUT
 
-        modalContent.append(
-          span,
-          logoNameContainer,
-          slideshowContainer,
-          h3About,
-          pAbout,
-          innerContainer,
-          sendMessageBtn
-        );
+        modalContent.append(span,logoNameContainer, slideshowContainer, h3About, pAbout, innerContainer,sendMessageBtn);
 
         modal.style.display = "block";
         
@@ -252,8 +245,79 @@ function displayCompany(company) {
         window.onclick = function (event) {
           if (event.target == modal) {
             modal.style.display = "none";
+            removeModal();
           }
         };
+
+        sendMessageBtn.addEventListener("click", ()=> {
+          removeModal();
+
+          let sendmodal = document.createElement("div");
+          sendmodal.id = "myModal2"; 
+          sendmodal.classList.add("modal");
+          document.body.append(sendmodal);
+
+          let sendmodalContent = document.createElement("div");
+          sendmodalContent.classList.add("modal-content");
+          sendmodal.append(sendmodalContent);
+
+          let sendSpan = document.createElement("span");
+          sendSpan.classList.add("close");
+          sendSpan.innerText = "x";
+
+          sendmodal.style.display = "block";
+
+          let sendMessageh3 = document.createElement("h3");
+          sendMessageh3.innerText = "Skicka meddelande till " + matchingCompany.companyName;
+          let sendMessageForm = document.createElement("form");
+          sendMessageForm.id = "send-message-form"
+          let textarea = document.createElement("textarea");
+          let sendMessageBtn = document.createElement("button");
+          sendMessageBtn.innerText = "Skicka meddelande"
+
+          // collapsible
+          let tipsBtn = document.createElement("button");
+          tipsBtn.innerText = "v   Tips"
+          tipsBtn.classList.add("collapsible")
+          let tipsContent = document.createElement("div");
+          tipsContent.classList.add("content")
+          let tipsList = document.createElement("ul");
+          tipsContent.append(tipsList);
+          tipsList.id ="tips-list"
+          let tip1 = document.createElement("li");
+          tip1.innerText = "Presentera dig själv kortfattat för företaget.";
+          let tip2 = document.createElement("li");
+          tip2.innerText = "Skriv här eller i din presentation vilka veckor du söker LIA."
+          let tip3 = document.createElement("li");
+          tip3.innerText = "Fråga någonting om företaget för att initiera en konversation. Några exempel: Vilka ramverk arbetar de med? Vad får en LIA-praktikant göra när de har LIA hos dem? Vad söker deras team just nu?"
+          tipsList.append(tip1, tip2, tip3);
+
+          tipsBtn.addEventListener("click", function() {
+          this.classList.toggle("active");
+
+          if (tipsContent.style.display === "block") {
+            tipsContent.style.display = "none";
+          } else {
+            tipsContent.style.display = "block";
+          }
+        });
+          // collapsible end
+
+          sendmodalContent.append(sendSpan, sendMessageh3, tipsBtn, tipsContent, sendMessageForm);
+          sendMessageForm.append(textarea, sendMessageBtn);
+
+          sendSpan.onclick = function () {
+            sendmodal.style.display = "none";
+            removeModal();
+          };
+  
+          window.onclick = function (event) {
+            if (event.target == sendmodal) {
+              sendmodal.style.display = "none";
+              removeModal();
+            }
+          };
+        })
       }
     });
 }
