@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /* Navbar*/
@@ -77,6 +78,7 @@ body {
     width:96.7%;
     text-align: center;
     padding: 10px;
+    border: transparent 1px dotted;
 }
 
 #student-link1, #student-link2, #student-link3{
@@ -85,11 +87,13 @@ body {
     margin: 10px;
     color: white;
     border-radius: 25px;
+    width: 14rem;
+    margin: 10px auto;
 }
 
 #student-about{
     position: absolute;
-    right: 150px;
+    right: 5vw;
     top: 300px;
     background-color: transparent;
     border: none;
@@ -102,7 +106,7 @@ body {
 
 #label-about{
     position: absolute;
-    right: 543px;
+    right: 30vw;
     top: 240px;
     font-size: xx-large;
     color: white;
@@ -115,15 +119,12 @@ body {
     color: #d9516b;
     background-color: transparent;
     font-family: 'Inter';
-    position: relative;
-    top: 122px;
-    left: 60px;
 }
 
 #match-btn{
     position: absolute;
-    top: 700px;
-    right: 200px;
+    top: 85vh;
+    left: 80vw;
     padding: 10px;
     border-radius: 20px;
     border: black 1px solid;
@@ -137,13 +138,36 @@ body {
 }
 
 #logout-btn{
-    position: absolute;
-    top: 700px;
-    right: 1375px;
+    position: relative;
+    left: 25vw;
+    bottom: 50px;
     padding: 10px;
     border-radius: 20px;
     border: black 1px solid;
     color: #d9516b;
     background-color: transparent;
     font-family: 'Inter';
+}
+
+#student-mail:enabled{
+    border: #d9516b 1px dotted;
+    border-radius: 20px;
+}
+ 
+#student-password:enabled{
+    border: #d9516b 1px dotted;
+    border-radius: 20px;
+}
+
+#student-link1:enabled, #student-link2:enabled, #student-link3:enabled{
+    border: #d9516b 2px dotted;
+    background-color: transparent;
+    color: black;
+}
+
+#student-about:enabled{
+    margin: -1px;
+    border: black 1px dotted;
+    background-color: white;
+    color: black;
 }
