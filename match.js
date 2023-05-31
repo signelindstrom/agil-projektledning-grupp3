@@ -29,7 +29,7 @@ async function compare() {
         student.matchingValues.cities,
         companies[i].companyCity
       );
-      console.log(student.matchingValues.cities);
+      console.log("student city", student.matchingValues.cities);
     }
     console.log(isReq);
     if (isReq) {
@@ -49,7 +49,7 @@ function compareAnswers(studentAnswers, companyAnswers) {
   let compatability = 0;
   for (let i = 0; i < studentAnswers.length; i++) {
     if (studentAnswers[i] == companyAnswers[`choice${i}`]) {
-      console.log(studentAnswers[i], companyAnswers[`choice${i}`]);
+      // console.log(studentAnswers[i], companyAnswers[`choice${i}`]);
       compatability++;
     }
   }
@@ -87,16 +87,19 @@ function compareReq(studentreq, companyreqarr) {
 
 function displayCompany(company) {
   console.log(company.companyImages[0]);
+
   const contentHolder = document.getElementById("contentHolder");
   let contentDiv = document.createElement("div");
   let imageHolder = document.createElement("img");
   let nameHolder = document.createElement("h4");
   let locationHolder = document.createElement("p");
   let readMoreButton = document.createElement("button");
+
   nameHolder.innerText = `${company.companyName}`;
   locationHolder.innerText = `${company.companyCity}`;
   imageHolder.src = `${company.companyImages[0]}`;
   readMoreButton.innerText = "Läs mer";
+  
   const readMoreButtonId = "readMoreButton" + company.companyName;
   readMoreButton.id = readMoreButtonId;
   contentDiv.append(imageHolder, nameHolder, locationHolder, readMoreButton);
