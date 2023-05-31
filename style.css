@@ -63,6 +63,7 @@ main {
   color: white;
 }
 
+
 /* Matching website*/
 
 .aside_content_matchingsite {
@@ -146,7 +147,8 @@ main {
 }
 
 .aside_matching_information {
-  background-color: #cc919c;
+  /* background-color: #cc919c;*/
+  background: linear-gradient(#CC919C, #BD4C61);
   width: 40vw;
   height: 90vh;
   color: white;
