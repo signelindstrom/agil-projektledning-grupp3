@@ -9,7 +9,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: black solid 1px; 
+    border-bottom: black solid 1px;
 }
 
 .navbar_icon img {
@@ -29,6 +29,11 @@ li {
     list-style-type: none;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 
 /* User-profile */
 body {
@@ -42,7 +47,7 @@ body {
     font-family: 'Inter';
 }
 
-#student-profile{
+#student-profile {
     width: 40%;
     height: 80%;
     text-align: center;
@@ -52,22 +57,28 @@ body {
     margin-top: 70px;
 }
 
-#student-greeting{
+#student-greeting {
     color: #d9516b;
     padding: 10px;
 }
 
-#student-info{
+#student-info {
     margin: 20px;
     height: fit-content;
 }
 
-#label-mail, #label-password, #label-links{
+#label-mail,
+#label-password,
+#label-links {
     color: #d9516b;
     border-bottom: black 1px solid;
 }
 
-#student-mail, #student-password, #student-link1, #student-link2, #student-link3{
+#student-mail,
+#student-password,
+#student-link1,
+#student-link2,
+#student-link3 {
     display: block;
     color: black;
     font-family: 'Inter';
@@ -75,13 +86,15 @@ body {
     font-size: medium;
     background-color: transparent;
     border: none;
-    width:96.7%;
+    width: 96.7%;
     text-align: center;
     padding: 10px;
     border: transparent 1px dotted;
 }
 
-#student-link1, #student-link2, #student-link3{
+#student-link1,
+#student-link2,
+#student-link3 {
     background-color: #d9516b;
     opacity: 80%;
     margin: 10px;
@@ -91,7 +104,7 @@ body {
     margin: 10px auto;
 }
 
-#student-about{
+#student-about {
     position: absolute;
     right: 5vw;
     top: 300px;
@@ -104,7 +117,7 @@ body {
     letter-spacing: 1.5px;
 }
 
-#label-about{
+#label-about {
     position: absolute;
     right: 30vw;
     top: 240px;
@@ -112,7 +125,7 @@ body {
     color: white;
 }
 
-#edit-info{
+#edit-info {
     padding: 10px;
     border-radius: 20px;
     border: black 1px solid;
@@ -121,7 +134,7 @@ body {
     font-family: 'Inter';
 }
 
-#match-btn{
+#match-btn {
     position: absolute;
     top: 85vh;
     left: 80vw;
@@ -132,7 +145,7 @@ body {
     font-family: 'Inter';
 }
 
-#match-btn>a{
+#match-btn>a {
     text-decoration: none;
     color: white;
 }
