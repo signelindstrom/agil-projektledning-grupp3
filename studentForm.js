@@ -85,4 +85,3 @@ async function putUpdatedInfo(obj) {
   const response = await fetch(url, init);
   const data = await response.json();
 }
-console.log(studentForm.elements)

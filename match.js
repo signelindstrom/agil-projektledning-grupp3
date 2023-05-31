@@ -17,22 +17,17 @@ async function getStudent() {
 async function compare() {
   const companies = await getCompany();
   const student = await getStudent();
-  console.log(student);
   for (let i = 0; i < companies.length; i++) {
-    console.log(student.matchingValues.lookingFor)
     let isReq = compareReq(
       student.matchingValues.lookingFor,
       companies[i].companyLookingFor
-    );
-    console.log(isReq);
+    );;
     if (isReq) {
       isReq = compareCity(
         student.matchingValues.cities,
         companies[i].companyCity
       );
-      console.log("student city", student.matchingValues.cities);
     }
-    console.log(isReq);
     if (isReq) {
       compareAnswers(
         student.matchingValues.answers,
@@ -46,37 +41,28 @@ async function compare() {
 }
 
 function compareAnswers(studentAnswers, companyAnswers) {
-  console.log(studentAnswers);
   let compatability = 0;
   for (let i = 0; i < studentAnswers.length; i++) {
     if (studentAnswers[i] == companyAnswers[`choice${i}`]) {
-      console.log(studentAnswers[i], companyAnswers[`choice${i}`]);
       compatability++;
     }
   }
   if (compatability >= 7) {
-    console.log("match");
+
     return true;
-  } else {
-    console.log("no match");
   }
   return false;
 }
 function compareCity(studentCities, companyCity) {
-  // console.log(studentCities.length)
   for (let i = 0; i < studentCities.length; i++) {
     if (studentCities[i] === companyCity) {
-      console.log(studentCities);
-      console.log(companyCity);
+
       return true;
-    } else {
-      console.log("try again lmao");
     }
   }
   return false;
 }
 function compareReq(studentreq, companyreqarr) {
-  // console.log(studentreq)
   for (let i = 0; i < companyreqarr.length; i++) {
     let companyreq = companyreqarr[i];
     if (studentreq === companyreq) {
@@ -87,7 +73,6 @@ function compareReq(studentreq, companyreqarr) {
 }
 
 function displayCompany(company) {
-  console.log(company.companyName);
 
   const contentHolder = document.getElementById("contentHolder");
   let contentDiv = document.createElement("div");
