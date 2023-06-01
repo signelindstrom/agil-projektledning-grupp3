@@ -1,11 +1,107 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
+} */
+
+#student-profile {
+    display: flex;
+}
+
+#right-side {
+    background: linear-gradient(#CC919C, #BD4C61);
+    width: 40vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#left-side {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+#left-side h1 {
+    margin-top: 120px;
+    color: #D9516B;
+
+}
+
+#left-side label, #left-side input, #left-side button {
+    width: 50%;
+}
+
+#left-side label {
+    color: #d9516b;
+    border-bottom: black 1px solid;
+    width: auto;
+    margin-top: 10px;
+}
+
+#left-side input {
+    display: block;
+    color: black;
+    padding: 5px;
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    padding: 10px;
+    border: transparent 1px dotted;
+}
+
+#left-side #student-link1,
+#left-side #student-link2,
+#left-side #student-link3 {
+    background-color: #d9516b;
+    opacity: 80%;
+    margin: 10px;
+    color: white;
+    border-radius: 25px;
+    width: 14rem;
+    margin: 5px auto;
+}
+
+#profile-buttons {
+    display: flex;
+    border: 1px solid red;
+    width: 40%;
+    margin-top: 20px;
+}
+
+#edit-info {
+    padding: 10px;
+    border-radius: 20px;
+    border: black 1px solid;
+    color: #d9516b;
+    background-color: transparent;
+    cursor: pointer;
+    /* margin-top: 10px; */
+}
+
+#match-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: black 1px solid;
+    background-color: transparent;
+    width: fit-content;
+    align-self: center;
+}
+
+#match-btn>a {
+    text-decoration: none;
+    color:#d9516b;
 }
 
 /* Navbar*/
-nav {
+/* nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,11 +128,11 @@ li {
 a {
     color: #d9516b;
     text-decoration: none;
-}
+} */
 
 
 /* User-profile */
-body {
+/* body {
     font-family: 'Inter';
 }
 
@@ -176,4 +272,4 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 10rem;
-}
+} */
