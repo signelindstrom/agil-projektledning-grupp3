@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 /* Navbar*/
@@ -30,31 +30,14 @@ li {
 }
 
 a {
-    color: white;
+    color: #d9516b;
     text-decoration: none;
 }
 
 
 /* User-profile */
 body {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to right,
-            white 0%,
-            white 55%,
-            #d9516b 55%,
-            #d9516b 100%);
     font-family: 'Inter';
-}
-
-#student-profile {
-    width: 40%;
-    height: 80%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin-left: 160px;
-    margin-top: 70px;
 }
 
 #student-greeting {
@@ -86,10 +69,14 @@ body {
     font-size: medium;
     background-color: transparent;
     border: none;
-    width: 96.7%;
     text-align: center;
     padding: 10px;
     border: transparent 1px dotted;
+}
+
+#student-mail,
+#student-password{
+   margin: 1rem auto;
 }
 
 #student-link1,
@@ -102,15 +89,6 @@ body {
     border-radius: 25px;
     width: 14rem;
     margin: 10px auto;
-}
-
-#about{
-    height: fit-content;
-    display: flex;
-    flex-flow: column;
-    position: absolute;
-    top: 25%;
-    right: 8%;
 }
 
 #student-about {
@@ -177,4 +155,25 @@ body {
     border: black 1px dotted;
     background-color: white;
     color: black;
+}
+
+#student-profile{
+    display: flex;
+}
+
+#left-side{
+    height: 100vh;
+    width: 55vw;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+#right-side{
+    height: 100vh;
+    width: 45vw;
+    background-color: #d9516b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10rem;
 }

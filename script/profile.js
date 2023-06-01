@@ -1,6 +1,5 @@
 const studentGreeting = document.querySelector('#student-greeting');
 const studentSchool = document.querySelector('#student-school');
-const studentInfo = document.querySelector('#student-info');
 const studentMail = document.querySelector('#student-mail');
 const studentPassword = document.querySelector('#student-password');
 const studentAbout = document.querySelector('#student-about');
