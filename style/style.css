@@ -26,6 +26,13 @@ li {
   list-style-type: none;
 }
 
+li>a{
+  font-family: 'Inter';
+  text-decoration: none;
+  color: #D9516B;
+  cursor: pointer;
+}
+
 /* Landingpage main */
 
 main {
