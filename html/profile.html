@@ -19,6 +19,7 @@
         <ul>
             <li><a href="../index.html">Startsida</a></li>
             <li><a href="./profile.html">Profil</a></li>
+            <li id="logout-link"><a href="">Logga ut</a></li>
         </ul>
     </nav>
 
@@ -30,19 +31,19 @@
             <input type="text" id="student-mail" disabled>
             <label for="student-password" id="label-password">LÖSENORD:</label>
             <input type="password" id="student-password" disabled>
-            <label for="student-about" id="label-about">Om mig</label>
+            <div id="about">
+                <label for="student-about" id="label-about">Om mig</label>
             <textarea name="" id="student-about" cols="55" rows="18" disabled></textarea>
+            </div>
             <label for="student-link1 student-link2 student-link3" id="label-links">LÄNKAR:</label>
             <input type="text" id="student-link1" disabled>
             <input type="text" id="student-link2" disabled>
             <input type="text" id="student-link3" disabled>
             <button id="edit-info">REDIGERA</button>
         </form>
+        <button id="match-btn"><a href="./matchform.html">BÖRJA MATCHA!</a></button>
     </div>
 
-    <button id="match-btn"><a href="./matchform.html">BÖRJA MATCHA!</a></button>
-
-    <button id="logout-btn">LOGGA UT</button>
 </body>
 
 </html>
