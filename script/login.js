@@ -1,11 +1,13 @@
 let adminAuth = localStorage.getItem('adminAuth');
 let studentLoggedIn = localStorage.getItem('loggedIn')
 
-if (adminAuth) {
-    location.assign('admin.html');
-} else if (studentLoggedIn) {
-    location.assign('profile.html')
-}
+// if (adminAuth) {
+//     location.assign('admin.html');
+// } else if (studentLoggedIn) {
+//     location.assign('profile.html')
+// } else {
+//     console.log("hej")
+// }
 
 const loginForm = document.querySelector('#login-form');
 const signupForm = document.querySelector('#signup-form');

@@ -14,7 +14,6 @@
     height: 100vh;
     color: white;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -60,18 +59,17 @@
 #left-side #student-link1,
 #left-side #student-link2,
 #left-side #student-link3 {
-    background-color: #d9516b;
-    opacity: 80%;
+    background-color: #D9516B;
     margin: 10px;
     color: white;
     border-radius: 25px;
     width: 14rem;
     margin: 5px auto;
+    border: transparent 1px dotted;
 }
 
 #profile-buttons {
     display: flex;
-    border: 1px solid red;
     width: 40%;
     margin-top: 20px;
 }
@@ -83,7 +81,6 @@
     color: #d9516b;
     background-color: transparent;
     cursor: pointer;
-    /* margin-top: 10px; */
 }
 
 #match-btn {
@@ -98,6 +95,61 @@
 #match-btn>a {
     text-decoration: none;
     color:#d9516b;
+}
+
+#student-mail:enabled{
+    border: #d9516b 1px dotted;
+    border-radius: 20px;
+}
+ 
+#student-password:enabled{
+    border: #d9516b 1px dotted;
+    border-radius: 20px;
+}
+
+#left-side #student-link1:enabled, #left-side #student-link2:enabled, #left-side #student-link3:enabled{
+    border: #d9516b 2px dotted;
+    background-color: transparent;
+    color: black;
+}
+
+#student-about:enabled{
+    margin: -1px;
+    border: black 1px dotted;
+    background-color: white;
+    color: black;
+}
+
+#label-about {
+    margin-top: 100px;
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#student-about {
+    background-color: transparent;
+    border: none;
+    color: white;
+    resize: none;
+    font-family: 'Inter';
+    font-size: medium;
+    letter-spacing: 1.5px;
+    margin-left: 50px;
+    margin-right: 60px;
+    font-size: 14px;
+    line-height: 22px;
+
+}
+
+#student-about:enabled{
+    margin: -1px;
+    border: black 1px dotted;
+    background-color: white;
+    color: black;
+    margin-left: 50px;
 }
 
 /* Navbar*/
