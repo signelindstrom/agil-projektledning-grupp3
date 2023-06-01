@@ -84,7 +84,7 @@ function displayCompany(company) {
   nameHolder.innerText = `${company.companyName}`;
   locationHolder.innerText = `${company.companyCity}`;
   imageHolder.src = `${company.companyLogo}`;
-  readMoreButton.innerText = "Läs mer";
+  readMoreButton.innerText = "Läs mer ->";
   
   const readMoreButtonId = "readMoreButton" + company.companyName;
   readMoreButton.id = readMoreButtonId;

@@ -2,10 +2,6 @@
   font-family: Inter, sans-serif;
 }
 
-/* aside {
-  height: 100vh;
-} */
-
 .modal {
   display: none;
   position: fixed;
@@ -205,4 +201,16 @@
 .modal-content h3 {
   color: #D9516B;
   font-weight:bolder;
+}
+
+.matchboxtwenty * {
+  color: white;
+}
+
+.matchboxtwenty button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
 }
