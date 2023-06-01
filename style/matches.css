@@ -2,6 +2,10 @@
   font-family: Inter, sans-serif;
 }
 
+/* aside {
+  height: 100vh;
+} */
+
 .modal {
   display: none;
   position: fixed;
