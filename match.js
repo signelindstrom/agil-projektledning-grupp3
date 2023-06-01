@@ -228,15 +228,7 @@ function displayCompany(company) {
         // showSlides(slideIndex);
         // SLIDESHOW SLUT
 
-        modalContent.append(
-          span,
-          logoNameContainer,
-          slideshowContainer,
-          h3About,
-          pAbout,
-          innerContainer,
-          sendMessageBtn
-        );
+        modalContent.append(span,logoNameContainer, slideshowContainer, h3About,pAbout,innerContainer,sendMessageBtn);
 
         modal.style.display = "block";
         
