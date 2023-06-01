@@ -214,3 +214,9 @@
   cursor: pointer;
   font-size: 15px;
 }
+
+aside p {
+  text-align: left;
+  width: 70%;
+  line-height: 26px;
+}

@@ -128,8 +128,8 @@ main {
 
 .matchboxtwenty {
   background-color: #D9516B;
-  width: 35vw;
-  height: 13vh;
+  width: 450px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
