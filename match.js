@@ -151,7 +151,18 @@ function displayCompany(company) {
         websiteLink.innerText = "Besök vår webbplats ->";
         websiteLink.href = matchingCompany.companyWebpage;
         let location = document.createElement("div");
-        location.innerText = matchingCompany.companyLocation;
+
+        let addressParts = matchingCompany.companyLocation.split(","); 
+        location.innerText = addressParts[0].trim(); 
+
+        if (addressParts.length > 1) {
+          let secondPart = document.createElement("span");
+          secondPart.innerText = addressParts[1].trim(); 
+        
+          location.appendChild(document.createElement("br")); 
+          location.appendChild(secondPart); 
+        }
+
         location.id = "location"
         lookingForContainer.append(h3LookingFor, pLookingFor, location);
         innerContainer.id = "inner-container";
