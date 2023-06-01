@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
 }
@@ -52,12 +51,23 @@ main {
 .landingpage img {
   width: 100vw;
   height: 78vh;
+  filter: opacity(67%) drop-shadow(8px 8px 10px#3C2A45);
 }
+
+.landingpage button {
+  background-color: #D9516B;
+  border-radius: 1rem;
+  width: 10rem;
+  height: 2.5rem;
+  border: none;
+  color: white;
+}
+
 
 /* Matching website*/
 
 .aside_content_matchingsite {
-  background-color: #cc919c;
+  background: linear-gradient(#CC919C, #BD4C61);
   width: 40vw;
   height: 90vh;
   color: white;
@@ -88,14 +98,17 @@ main {
   align-items: center;
   gap: 30px;
 }
+
 .matchboxtwenty {
-  background-color: #cc919c;
+  background-color: #D9516B;
   width: 35vw;
   height: 13vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 3rem;
 }
+
 .matching_information_div_container_two {
   background-color: #cc919c;
   width: 35vw;
@@ -122,6 +135,10 @@ main {
   display: flex;
 }
 
+.inactive {
+  display: none;
+}
+
 .div_for_form_information {
   width: 60vw;
   height: 90vh;
@@ -131,7 +148,8 @@ main {
 }
 
 .aside_matching_information {
-  background-color: #cc919c;
+  /* background-color: #cc919c;*/
+  background: linear-gradient(#CC919C, #BD4C61);
   width: 40vw;
   height: 90vh;
   color: white;
@@ -142,6 +160,21 @@ main {
   text-align: center;
 }
 
+.button-46 {
+  align-items: center;
+  background-color: rgba(240, 240, 240, 0.26);
+  border: 1px solid #DFDFDF;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  min-width: 200px;
+  font-size: 18px;
+  justify-content: center;
+  padding: 14px 22px;
+  text-decoration: none;
+}
 
 /* ADMIN */
 
