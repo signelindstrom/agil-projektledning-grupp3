@@ -156,18 +156,6 @@ body {
     color:#d9516b;
 }
 
-/* #logout-btn{
-    position: relative;
-    left: 25vw;
-    bottom: 50px;
-    padding: 10px;
-    border-radius: 20px;
-    border: black 1px solid;
-    color: #d9516b;
-    background-color: transparent;
-    font-family: 'Inter';
-} */
-
 #student-mail:enabled{
     border: #d9516b 1px dotted;
     border-radius: 20px;
