@@ -113,7 +113,7 @@ async function checkAnswersFirebase(){
   const student = await getStudent()
   console.log(student)
   if(student.answers.length > 0 && student.cities.length >= 0 && student.lookingFor == "b2b" || student.lookingFor == "frontend" || student.lookingFor == "backend"){
-    window.location.href="matches.html"
+    // window.location.href="matches.html"
   }
 }
 
