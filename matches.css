@@ -40,7 +40,7 @@
 
 #inner-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -69,6 +69,11 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+}
+
+#lookingforcontainer {
+  position: absolute;
+  left: 30vw;
 }
 
 .mySlides {

@@ -144,19 +144,23 @@ function displayCompany(company) {
         h3LookingFor.innerText = "Vi söker";
         let innerContainer = document.createElement("div");
         lookingForContainer = document.createElement("div");
+        lookingForContainer.id = "lookingforcontainer"
         let pLookingFor = document.createElement("p");
         pLookingFor.innerText = matchingCompany.companyLookingFor;
         let websiteLink = document.createElement("a");
         websiteLink.innerText = "Besök vår webbplats ->";
         websiteLink.href = matchingCompany.companyWebpage;
-        lookingForContainer.append(h3LookingFor, pLookingFor);
-        innerContainer.append(lookingForContainer, websiteLink);
+        let location = document.createElement("div");
+        location.innerText = matchingCompany.companyLocation;
+        location.id = "location"
+        lookingForContainer.append(h3LookingFor, pLookingFor, location);
         innerContainer.id = "inner-container";
         logoNameContainer.append(logo, h2Name);
         logoNameContainer.id = "logo-name-container";
         // antal matchningar här?
         let sendMessageBtn = document.createElement("button");
         sendMessageBtn.innerText = "Skicka meddelande";
+        sendMessageBtn.id = "sendmessage-btn"
 
         // SLIDESHOW I MODAL
 
@@ -221,12 +225,14 @@ function displayCompany(company) {
         modalContent.append(
           span,
           logoNameContainer,
-          slideshowContainer,
+          innerContainer,
           h3About,
           pAbout,
-          innerContainer,
+          websiteLink,
           sendMessageBtn
         );
+
+        innerContainer.append( lookingForContainer, slideshowContainer);
 
         modal.style.display = "block";
         
