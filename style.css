@@ -51,7 +51,7 @@ main {
 .landingpage img {
   width: 100vw;
   height: 78vh;
-  filter: brightness(50%);
+  filter: opacity(67%) drop-shadow(8px 8px 10px#3C2A45);
 }
 
 .landingpage button {
@@ -67,7 +67,7 @@ main {
 /* Matching website*/
 
 .aside_content_matchingsite {
-  background-color: #cc919c;
+  background: linear-gradient(#CC919C, #BD4C61);
   width: 40vw;
   height: 90vh;
   color: white;
@@ -100,12 +100,13 @@ main {
 }
 
 .matchboxtwenty {
-  background-color: #cc919c;
+  background-color: #D9516B;
   width: 35vw;
   height: 13vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 3rem;
 }
 
 .matching_information_div_container_two {
