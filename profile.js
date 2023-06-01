@@ -122,8 +122,8 @@ if (localStorage.getItem('loggedIn') == 'true') {
     })
 
     // logout user
-    const logoutBtn = document.querySelector('#logout-btn');
-    logoutBtn.addEventListener('click', () =>{
+    const logoutLink = document.querySelector('#logout-link');
+    logoutLink.addEventListener('click', () =>{
         localStorage.clear();
         localStorage.setItem('loggedIn', false);
         setTimeout(() => {
