@@ -8,7 +8,8 @@
     <title>Min profil</title>
     <script src="../script/profile.js" defer></script>
     <link rel="stylesheet" href="../style/profile.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         <div class="navbar_icon">
             <a href="../index.html">
                 <img src="../img/digitalia.png" alt="icon" />
-              </a>
+            </a>
         </div>
         <ul>
             <li><a href="../index.html">Startsida</a></li>
@@ -25,24 +26,24 @@
     </nav>
 
     <div id="student-profile">
-        <h1 id="student-greeting"></h1>
-        <h3 id="student-school"></h3>
-        <form id="student-info">
+        <div id="left-side">
+            <h1 id="student-greeting"></h1>
+            <h3 id="student-school"></h3>
             <label for="student-mail" id="label-mail">MAIL:</label>
             <input type="text" id="student-mail" disabled>
             <label for="student-password" id="label-password">LÖSENORD:</label>
             <input type="password" id="student-password" disabled>
-            <div id="about">
-                <label for="student-about" id="label-about">Om mig</label>
-            <textarea name="" id="student-about" cols="55" rows="18" disabled></textarea>
-            </div>
             <label for="student-link1 student-link2 student-link3" id="label-links">LÄNKAR:</label>
             <input type="text" id="student-link1" disabled>
             <input type="text" id="student-link2" disabled>
             <input type="text" id="student-link3" disabled>
             <button id="edit-info">REDIGERA</button>
-        </form>
-        <button id="match-btn"><a href="./matchform.html">BÖRJA MATCHA!</a></button>
+            <button id="match-btn"><a href="./matchform.html">BÖRJA MATCHA!</a></button>
+        </div>
+        <div id="right-side">
+                <label for="student-about" id="label-about">Om mig</label>
+                <textarea name="" id="student-about" cols="45" rows="18" disabled></textarea>
+        </div>
     </div>
 
 </body>
