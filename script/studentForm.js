@@ -2,6 +2,27 @@ function toggleForm(formId) {
   const form = document.getElementById(formId);
   form.classList.toggle('inactive');
 }
+
+function cityButton(button){
+  let button1 = document.getElementById('btn1')
+  let button2 = document.getElementById('btn2')
+  let button3 = document.getElementById('btn3')
+  const cityButton = document.getElementById(`${button}`)
+  cityButton.classList.toggle('active')
+  switch (button) {
+    case 'btn1':
+      button2.classList.remove('active')
+      button3.classList.remove('active')
+      break;
+    case 'btn2':
+      button1.classList.remove('active')
+      button3.classList.remove('active')
+      break;
+    case 'btn3':
+      button1.classList.remove('active')
+      button2.classList.remove('active')
+  }
+}
 function hideAllForms(formName) {
   const forms = document.getElementsByClassName('kommunForm');
   for (let i = 0; i < forms.length; i++) {
@@ -10,22 +31,26 @@ function hideAllForms(formName) {
     }
   }
 }
+
 document.getElementById('btn1').addEventListener('click', function(e) {
   e.preventDefault()
   hideAllForms('form1')
   toggleForm('form1');
+  cityButton('btn1')
 });
 
 document.getElementById('btn2').addEventListener('click', function(e) {
   e.preventDefault()
   hideAllForms('form2')
   toggleForm('form2');
+  cityButton('btn2')
 });
 
 document.getElementById('btn3').addEventListener('click', function(e) {
   e.preventDefault()
   hideAllForms('form3')
   toggleForm('form3');
+  cityButton('btn3')
 });
 
 
@@ -68,20 +93,33 @@ matchButton.addEventListener('click', async(e) => {
   }
 
 })
-
-
-
+checkAnswersFirebase()
 async function putUpdatedInfo(obj) {
   const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/students/${localStorage.getItem('studentId')}/matchingValues.json`;
-
+  
   const init = {
-      method: 'PUT',
-      body: JSON.stringify(obj),
-      headers: {
-          'Content-type': "application/json; charset=UTF-8"
-      }
+    method: 'PUT',
+    body: JSON.stringify(obj),
+    headers: {
+      'Content-type': "application/json; charset=UTF-8"
+    }
   }
-
+  
   const response = await fetch(url, init);
   const data = await response.json();
+}
+
+async function checkAnswersFirebase(){
+  const student = await getStudent()
+  console.log(student)
+  if(student.answers.length > 0 && student.cities.length >= 0 && student.lookingFor == "b2b" || student.lookingFor == "frontend" || student.lookingFor == "backend"){
+    window.location.href="matches.html"
+  }
+}
+
+async function getStudent(){
+  const url = `https://digitalia-e9f5c-default-rtdb.europe-west1.firebasedatabase.app/students/${localStorage.getItem('studentId')}/matchingValues.json`
+  const response = await fetch(url)
+  const data = await response.json()
+  return data
 }
