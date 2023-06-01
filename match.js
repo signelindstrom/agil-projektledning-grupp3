@@ -283,12 +283,13 @@ function displayCompany(company) {
           let sendMessageForm = document.createElement("form");
           sendMessageForm.id = "send-message-form"
           let textarea = document.createElement("textarea");
+          textarea.rows = 6;
           let sendMessageBtn = document.createElement("button");
           sendMessageBtn.innerText = "Skicka meddelande"
 
           // collapsible
           let tipsBtn = document.createElement("button");
-          tipsBtn.innerText = "v   Tips"
+          tipsBtn.innerText = "Vad ska jag skriva?"
           tipsBtn.classList.add("collapsible")
           let tipsContent = document.createElement("div");
           tipsContent.classList.add("content")
