@@ -146,9 +146,10 @@ function displayCompany(company) {
         lookingForContainer = document.createElement("div");
         lookingForContainer.id = "lookingforcontainer"
         let pLookingFor = document.createElement("p");
-        pLookingFor.innerText = matchingCompany.companyLookingFor;
+        pLookingFor.innerText = "#" + matchingCompany.companyLookingFor.join(" #");
         let websiteLink = document.createElement("a");
         websiteLink.innerText = "Besök vår webbplats ->";
+        websiteLink.id = "websitelink";
         websiteLink.href = matchingCompany.companyWebpage;
         let location = document.createElement("div");
 

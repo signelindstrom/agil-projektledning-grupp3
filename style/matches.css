@@ -5,7 +5,7 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 203;
   left: 0;
   top: 0;
   width: 100%;
@@ -13,6 +13,7 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.5);
+  
 }
 
 .modal-content {
@@ -39,7 +40,7 @@
 }
 
 .company-logo-modal {
-  width: 50px;
+  height: 40px;
 }
 
 #inner-container {
@@ -78,6 +79,13 @@
 #lookingforcontainer {
   position: absolute;
   left: 30vw;
+  margin-top: -40px;
+}
+
+#lookingforcontainer p {
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 40px;
 }
 
 .mySlides {
@@ -219,4 +227,40 @@ aside p {
   text-align: left;
   width: 70%;
   line-height: 26px;
+}
+
+#logo-name-container h2 {
+  color: #D9516B;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+#p-about {
+  font-size: 12px;
+  margin-top: -10px;
+}
+
+#sendmessage-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 45%;
+  background-color: #D9516B;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  border: none;
+  text-align: left;
+  outline: none;
+  border-radius: 500px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#websitelink {
+  margin-bottom: 0px;
+  margin: 2em;
+  color: #D9516B;
+  font-size: 15px;
+  font-weight: bold;
 }
