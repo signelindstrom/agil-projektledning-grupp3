@@ -280,14 +280,15 @@ input[type="radio"]:checked::before {
   height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: 60px;
 }
 
 .aside_matching_information {
   /* background-color: #cc919c;*/
   background: linear-gradient(#CC919C, #BD4C61);
   width: 40vw;
-  height: 90vh;
+  height: 100vh;
   color: white;
   display: flex;
   align-items: center;
@@ -324,8 +325,6 @@ input[type="radio"]:checked::before {
 .cityButton:checked{
   background-color: #D9516B;
 }
-
-
 
 /* ADMIN */
 
