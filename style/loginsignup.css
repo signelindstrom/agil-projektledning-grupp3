@@ -1,0 +1,110 @@
+main {
+    background: linear-gradient(#CC919C, #BD4C61);
+    overflow: hidden;
+}
+
+#decide-div {
+    background-color: white;
+    border-radius: 15px;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+#decide-div button {
+    width: 250px;
+    background-color: #D9516B;
+    color: white;
+    border-radius: 25px;
+    margin: 8px auto;
+    padding: 1em;
+    text-transform: uppercase;
+    border: none;
+}
+
+#decide-div p {
+    margin-top: -10px;
+    font-weight: bold;
+}
+
+#login-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+#login-form * {
+    display: block;
+    margin: 0 auto;
+}
+
+#login-form label {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#login-form button {
+    width: 250px;
+    background-color: #D9516B;
+    color: white;
+    border-radius: 25px;
+    margin: 8px auto;
+    margin-top: 22px;
+    padding: 1em;
+    text-transform: uppercase;
+    border: none;
+}
+
+#signup-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+#signup-form * {
+    display: block;
+    margin: 0 auto;
+}
+
+#signup-form label {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#signup-form button {
+    width: 250px;
+    background-color: #D9516B;
+    color: white;
+    border-radius: 25px;
+    margin-top: 22px;
+    margin: 8px auto;
+    padding: 1em;
+    text-transform: uppercase;
+    border: none;
+}
+
+#linksdiv {
+    display: flex;
+}
+
+#linksdiv * {
+    width: 110px;
+}

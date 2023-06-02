@@ -13,6 +13,7 @@ const loginForm = document.querySelector('#login-form');
 const signupForm = document.querySelector('#signup-form');
 loginForm.style.display = 'none'
 signupForm.style.display = 'none'
+const decideDiv = document.querySelector("#decide-div")
 
 const loginBtn = document.querySelector('#login-btn');
 const signupBtn = document.querySelector('#signup-btn');
@@ -20,11 +21,13 @@ const signupBtn = document.querySelector('#signup-btn');
 loginBtn.addEventListener('click', () => {
     signupForm.style.display = 'none'
     loginForm.style.display = 'block'
+    decideDiv.style.display = "none"
 })
 
 signupBtn.addEventListener('click', () => {
     loginForm.style.display = 'none'
     signupForm.style.display = 'block'
+    decideDiv.style.display = "none"
 })
 
 // get schools from database 
